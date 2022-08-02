@@ -94,7 +94,6 @@ img {
 
 .header-link {
   display: block;
-  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
   font-weight: 500;
@@ -109,7 +108,7 @@ img {
   color: var(--accent-color);
 }
 
-.header-link::after {
+/* .header-link::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -118,19 +117,30 @@ img {
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color);
-  opacity: 0;
   transform: scaleX(0);
   transition: transform 250ms var(--timing-function),
     opacity 250ms var(--timing-function);
 }
 
 .header-link:hover:after {
-  opacity: 1;
   transform: scaleX(1);
-}
+} */
 
 .current {
+  position: relative;
   color: var(--accent-color);
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
 }
 
 /*-----------------------Контакти--------------------- */
@@ -271,6 +281,7 @@ img {
 }
 .work-item {
   width: calc((100% - 60px) / 3);
+  position: relative;
 }
 
 .title {
@@ -280,6 +291,28 @@ img {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+}
+
+/* -----------------етикетка------------ */
+
+.label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.label-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--second-title-text-color);
 }
 
 /* -------------------Команда---------------- */
@@ -565,4 +598,45 @@ img {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+}
+
+/* ----------------------Модалка--------------------- */
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--primary-bg-color);
+}
+
+.button-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--primary-bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
