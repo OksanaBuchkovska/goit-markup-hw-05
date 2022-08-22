@@ -279,7 +279,7 @@ img {
 
 /* -----------------етикетка------------ */
 
-.label {
+.work-wrap {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -290,7 +290,7 @@ img {
   background-color: rgba(47, 48, 58, 0.8);
 }
 
-.label-text {
+.work-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
